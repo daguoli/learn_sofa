@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<component name="WsAlipayBindingAdapter">
-    <service>
-        <provide interface="com.alipay.sofa.runtime.alipaycomp.spi.service.AlipayBindingConverter"/>
-    </service>
-    <implementation
-            class="com.alipay.sofa.rpc.integration.binding.ws.AlipayWsBindingConverter"/>
-</component>

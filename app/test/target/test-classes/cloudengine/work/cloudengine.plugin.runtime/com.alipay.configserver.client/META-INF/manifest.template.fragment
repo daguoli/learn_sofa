@@ -1,6 +1,0 @@
-DynamicImport-Package: com.alipay.config.client,
- com.alipay.config.client.*,
- com.taobao.config.client,
- com.taobao.config.client.*,
- com.alipay.config.common,
- com.alipay.config.common.*

@@ -1,8 +1,0 @@
-DynamicImport-Package:  com.alipay.common.event,
- com.alipay.common.event.*,
- com.alipay.notify.elastic,
- com.alipay.notify.elastic.*,
- com.taobao.notify,
- com.taobao.notify.*,
- com.alipay.msgbroker.integration.spring,
- com.taobao.hsf.notify.client

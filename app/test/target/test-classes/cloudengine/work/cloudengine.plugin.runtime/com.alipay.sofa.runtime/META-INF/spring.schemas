@@ -1,3 +1,0 @@
-http\://schema.alipay.com/sofa/sofa-service-4-0-0.xsd=com/alipay/sofa/service/config/sofa-service.xsd
-http\://img.alipay.net/dtd/schema/service/sofa-service.xsd=com/alipay/sofa/service/config/compatible/sofa-service.xsd
-http\://www.alipay.com/schema/service/sofa-service.xsd=com/alipay/sofa/service/config/compatible/schema/sofa-service.xsd
