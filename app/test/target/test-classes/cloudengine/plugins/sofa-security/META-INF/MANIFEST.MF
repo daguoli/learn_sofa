@@ -1,0 +1,15 @@
+Plugin-Name: sofa-security
+Plugin-SymbolicName: com.alipay.sofa.security
+Plugin-Version: 1.0.3
+Plugin-Activator: com.alipay.sofa.security.activator.SecurityActivator
+Import-Package: org.osgi.framework
+DynamicImport-Package: com.alipay.drm.client,
+ com.alipay.drm.client.*,
+ com.alipay.common.tracer,
+ com.alipay.common.tracer.*,
+ com.alipay.sofa.security,
+ com.alipay.sofa.security.*,
+ com.alipay.sofa.runtime.spi,
+ com.alipay.sofa.runtime.spi.*,
+ com.alipay.sofa.runtime.api,
+ com.alipay.sofa.runtime.api.*

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<configuration status="OFF">
+
+    <Properties>
+        <!-- 将系统属性进行一次本地转换 -->
+        <Property name="DRM_LOG_LEVEL">${sys:logging.level.com.alipay.sofa.ddcs}</Property>
+        <Property name="DRM_LOG_PATH">${sys:logging.path}</Property>
+        <Property name="DRM_FILE_ENCODING">GBK</Property>
+    </Properties>
+
+    <!--  log4j2 appenders -->
+    <appenders>
+
+        <RollingFile name="ERROR-APPENDER" fileName="${DRM_LOG_PATH}/drm/common-error.log" append="true"
+                     filePattern="${DRM_LOG_PATH}/drm/common-error.log.%d{yyyy-MM-dd}">
+            <!-- only print error log -->
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout charset="${DRM_FILE_ENCODING}">
+                <pattern>%d %-5p %-32t - %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- 按天分日志文件:重要的是 filePattern 配置到按照天 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="ROOT-APPENDER" fileName="${DRM_LOG_PATH}/drm/common-default.log" append="true"
+                     filePattern="${DRM_LOG_PATH}/drm/common-default.log.%d{yyyy-MM-dd}">
+            <ThresholdFilter level="${DRM_LOG_LEVEL}" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout charset="${DRM_FILE_ENCODING}">
+                <pattern>%d %-5p %-32t - %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- 按天分日志文件:重要的是 filePattern 配置到按照天 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+
+        <RollingFile name="DRM-BOOT-APPENDER" fileName="${DRM_LOG_PATH}/drm/drm-boot.log" append="true"
+                     filePattern="${DRM_LOG_PATH}/drm/drm-boot.log.%d{yyyy-MM-dd}">
+            <ThresholdFilter level="${DRM_LOG_LEVEL}" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout charset="${DRM_FILE_ENCODING}">
+                <pattern>%d %-5p %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- 按天分日志文件:重要的是 filePattern 配置到按照天 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+
+        <RollingFile name="DRM-MONITOR-APPENDER" fileName="${DRM_LOG_PATH}/drm/drm-monitor.log" append="true"
+                     filePattern="${DRM_LOG_PATH}/drm/drm-monitor.log.%d{yyyy-MM-dd}">
+            <ThresholdFilter level="${DRM_LOG_LEVEL}" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout charset="${DRM_FILE_ENCODING}">
+                <pattern>%d %-5p %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- 按天分日志文件:重要的是 filePattern 配置到按照天 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+
+        <RollingFile name="DRM-HTTP-DIGEST-APPENDER" fileName="${DRM_LOG_PATH}/drm/drm-http-digest.log" append="true"
+                     filePattern="${DRM_LOG_PATH}/drm/drm-http-digest.log.%d{yyyy-MM-dd}">
+            <ThresholdFilter level="${DRM_LOG_LEVEL}" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout charset="${DRM_FILE_ENCODING}">
+                <pattern>%d %-5p %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- 按天分日志文件:重要的是 filePattern 配置到按照天 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="DRM-HEARTBEAT-DIGEST-APPENDER" fileName="${DRM_LOG_PATH}/drm/drm-heartbeat-digest.log"
+                     append="true"
+                     filePattern="${DRM_LOG_PATH}/drm/drm-heartbeat-digest.log.%d{yyyy-MM-dd}">
+            <ThresholdFilter level="${DRM_LOG_LEVEL}" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout charset="${DRM_FILE_ENCODING}">
+                <pattern>%d %-5p %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- 按天分日志文件:重要的是 filePattern 配置到按照天 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </appenders>
+
+    <loggers>
+        <logger name="DRM-BOOT" level="${DRM_LOG_LEVEL}" additivity="false">
+            <appender-ref ref="DRM-BOOT-APPENDER"/>
+            <appender-ref ref="ERROR-APPENDER"/>
+        </logger>
+
+        <logger name="DRM-MONITOR" level="${DRM_LOG_LEVEL}" additivity="false">
+            <appender-ref ref="DRM-MONITOR-APPENDER"/>
+            <appender-ref ref="ERROR-APPENDER"/>
+        </logger>
+
+        <logger name="DRM-HTTP-DIGEST" level="${DRM_LOG_LEVEL}" additivity="false">
+            <appender-ref ref="DRM-HTTP-DIGEST-APPENDER"/>
+            <appender-ref ref="ERROR-APPENDER"/>
+        </logger>
+
+        <logger name="DRM-HEARTBEAT-DIGEST" level="${DRM_LOG_LEVEL}" additivity="false">
+            <appender-ref ref="DRM-HEARTBEAT-DIGEST-APPENDER"/>
+            <appender-ref ref="ERROR-APPENDER"/>
+        </logger>
+
+        <root level="${DRM_LOG_LEVEL}">
+            <appender-ref ref="ROOT-APPENDER"/>
+            <appender-ref ref="ERROR-APPENDER"/>
+        </root>
+    </loggers>
+</configuration>

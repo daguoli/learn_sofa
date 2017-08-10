@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>com.alipay.mvcdemo</groupId>
+		<artifactId>mvcdemo-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../../../pom.xml</relativePath>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.alipay.mvcdemo</groupId>
+	<artifactId>mvcdemo-web-home</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<name>Alipay mvcdemo-web-home</name>
+	<description>Alipay mvcdemo-web-home</description>
+	<url>http://home.alipay.net</url>
+
+	<packaging>jar</packaging>
+
+	<dependencies>
+
+		<!-- mvc depends -->
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-kernel</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-sofa-env-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-alipay-toolbox-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-toolbox-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-validation-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-tair-newsession-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-widget-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-uisvr-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-json-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-resource-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-alipay-security-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-security-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa.web.mvc</groupId>
+			<artifactId>mvc-alipay-auth-plugin</artifactId>
+		</dependency>
+		<!-- project depends -->
+		<dependency>
+			<groupId>com.alipay.mvcdemo</groupId>
+			<artifactId>mvcdemo-biz-shared</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.context</artifactId>
+			<version>3.0.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring</artifactId>
+			<version>2.5.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.beans</artifactId>
+			<version>3.0.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring</artifactId>
+			<version>2.5.4</version>
+		</dependency>
+		<!-- lib depends -->
+	</dependencies>
+
+</project>

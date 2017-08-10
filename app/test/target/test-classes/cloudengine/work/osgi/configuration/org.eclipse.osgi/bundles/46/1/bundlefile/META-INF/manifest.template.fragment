@@ -1,0 +1,10 @@
+DynamicImport-Package: com.alipay.drm.client,
+ com.alipay.drm.client.*,
+ com.alipay.sofa.service.api.annotation.drm,
+ com.alipay.sofa.service.api.drm,
+ com.alipay.sofa.service.drm,
+ com.alipay.sofa.service.drm.*,
+ com.alipay.sofa.service.model.drm,
+ com.alipay.sofa.service.rum,
+ com.alipay.sofa.service.rum.*,
+ com.alipay.sofa.service.spi.drm

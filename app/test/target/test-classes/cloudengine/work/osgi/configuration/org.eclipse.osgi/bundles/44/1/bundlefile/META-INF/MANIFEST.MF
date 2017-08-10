@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+plugin_id: plugin-region.com.alipay.sofa.security
+Plugin-Location: /Users/dongjia.shen/codes/mvcdemo/app/test/target/tes
+ t-classes/cloudengine/work/cloudengine.plugin.runtime/com.alipay.sofa
+ .security
+Bundle-SymbolicName: plugin-region.com.alipay.sofa.security
+Bundle-Version: 1.0.3
+Bundle-Name: sofa-security
+Bundle-Activator: com.alipay.sofa.security.activator.SecurityActivator
+Modules-Classpath: /Users/dongjia.shen/codes/mvcdemo/app/test/target/t
+ est-classes/cloudengine/plugins/sofa-security,/Users/dongjia.shen/cod
+ es/mvcdemo/app/test/target/test-classes/cloudengine/plugins/sofa-secu
+ rity/module/sofa-security-integration-ce-1.0.3.jar
+Import-Package: org.osgi.framework
+Plugin-Module: plugin-region.com.alipay.sofa.security
+DynamicImport-Package: com.alipay.drm.client,com.alipay.drm.client.*,c
+ om.alipay.common.tracer,com.alipay.common.tracer.*,com.alipay.sofa.se
+ curity,com.alipay.sofa.security.*,com.alipay.sofa.runtime.spi,com.ali
+ pay.sofa.runtime.spi.*,com.alipay.sofa.runtime.api,com.alipay.sofa.ru
+ ntime.api.*
+

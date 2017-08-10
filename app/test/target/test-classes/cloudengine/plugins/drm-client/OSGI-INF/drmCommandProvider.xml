@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="DrmCommandProvider">
+    <service>
+        <provide interface="com.alipay.cloudengine.kernel.console.command.provider.AbstractCommandProvider"/>
+    </service>
+    <implementation
+            class="com.alipay.drm.client.plugin.DrmCommandProvider"/>
+</component>

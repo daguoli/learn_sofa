@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+
+  <Properties>
+    <!-- 将系统属性进行一次本地转换 -->
+    <Property name="REST_LOG_LEVEL">${sys:logging.level.com.alipay.sofa.rest}</Property>
+    <Property name="REST_LOG_PATH">${sys:logging.path}</Property>
+    <Property name="REST_FILE_ENCODING">${sys:file.encoding}</Property>
+  </Properties>
+
+  <appenders>
+
+    <RollingFile name="ERROR-APPENDER" fileName="${REST_LOG_PATH}/rest/common-error.log" append="true"
+                 filePattern="${REST_LOG_PATH}/rest/common-error-%d{yyyy-MM-dd}.log">
+      <!-- only print error log -->
+      <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+      <PatternLayout charset="${REST_FILE_ENCODING}">
+        <pattern>%d %-5p %-32t - %m%n</pattern>
+      </PatternLayout>
+      <Policies>
+        <!-- 按天分日志文件:重要的是 filePattern 配置到按照天 -->
+        <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+      </Policies>
+    </RollingFile>
+
+    <RollingFile name="ROOT-APPENDER" fileName="${REST_LOG_PATH}/rest/common-default.log" append="true"
+                 filePattern="${REST_LOG_PATH}/rest/common-default-%d{yyyy-MM-dd}.log">
+      <ThresholdFilter level="${REST_LOG_LEVEL}" onMatch="ACCEPT" onMismatch="DENY"/>
+      <PatternLayout charset="${REST_FILE_ENCODING}">
+        <pattern>%d %-5p %-32t - %m%n</pattern>
+      </PatternLayout>
+      <Policies>
+        <!-- 按天分日志文件:重要的是 filePattern 配置到按照天 -->
+        <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+      </Policies>
+    </RollingFile>
+
+    <RollingFile name="SOFA-APPENDER" fileName="${REST_LOG_PATH}/rest/sofa-default.log" append="true"
+                 filePattern="${REST_LOG_PATH}/rest/sofa-default-%d{yyyy-MM-dd}.log">
+      <ThresholdFilter level="${REST_LOG_LEVEL}" onMatch="ACCEPT" onMismatch="DENY"/>
+      <PatternLayout charset="${REST_FILE_ENCODING}">
+        <pattern>%d %-5p %-32t %c - %m%n</pattern>
+      </PatternLayout>
+      <Policies>
+        <!-- 按天分日志文件:重要的是 filePattern 配置到按照天 -->
+        <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+      </Policies>
+    </RollingFile>
+
+  </appenders>
+
+  <loggers>
+    <logger name="com.alipay.sofa.rest" level="${REST_LOG_LEVEL}" additivity="false">
+      <appender-ref ref="ROOT-APPENDER"/>
+      <appender-ref ref="ERROR-APPENDER"/>
+    </logger>
+    <logger name="org.jboss" level="${REST_LOG_LEVEL}" additivity="false">
+      <appender-ref ref="ROOT-APPENDER"/>
+      <appender-ref ref="ERROR-APPENDER"/>
+    </logger>
+    <logger name="com.alipay.sofa" level="${REST_LOG_LEVEL}" additivity="false">
+      <appender-ref ref="SOFA-APPENDER"/>
+      <appender-ref ref="ERROR-APPENDER"/>
+    </logger>
+
+    <root level="${REST_LOG_LEVEL}">
+      <appender-ref ref="ROOT-APPENDER"/>
+      <appender-ref ref="ERROR-APPENDER"/>
+    </root>
+  </loggers>
+</configuration>
