@@ -1,3 +1,5 @@
 *.class
 .idea
+app/core/service/target
+app/web/home/target
 app/test/target
