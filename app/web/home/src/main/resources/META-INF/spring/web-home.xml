@@ -28,10 +28,6 @@
           p:cacheSeconds="60"/>
 
     <!--
-    <sofa:reference id="sampleService" interface="com.alipay.mvcdemo.SampleService" />
-    -->
-
-    <!--
         以下就是Velocity的语法了
         dongjia.shen 20170810
     -->
@@ -40,5 +36,7 @@
     #else
         <bean id="springBean" class="com.alipay.mvcdemo.web.home.SpringBeanImplTwo" />
     #end
+
+    <sofa:reference id="sampleService" interface="com.alipay.mvcdemo.SampleService" unique-id="sample" />
 
 </beans>
