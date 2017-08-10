@@ -12,9 +12,11 @@
 	default-autowire="byName">
 
     <bean id="sampleService" class="com.alipay.mvcdemo.SampleServiceImpl" />
+
+	<!--
     <sofa:service ref="sampleService" interface="com.alipay.mvcdemo.SampleService" />
 
 	<bean id="sampleServiceTwo" class="com.alipay.mvcdemo.SampleServiceImplTwo" />
 	<sofa:service ref="sampleServiceTwo" interface="com.alipay.mvcdemo.SampleService" unique-id="sample" />
-
+	-->
 </beans>

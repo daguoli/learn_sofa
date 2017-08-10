@@ -37,6 +37,8 @@
         <bean id="springBean" class="com.alipay.mvcdemo.web.home.SpringBeanImplTwo" />
     #end
 
+    <!--
     <sofa:reference id="sampleService" interface="com.alipay.mvcdemo.SampleService" unique-id="sample" />
+    -->
 
 </beans>

@@ -7,6 +7,8 @@ package com.alipay.mvcdemo.web.home;
 
 import com.alipay.mvcdemo.SampleService;
 import com.alipay.mvcdemo.web.home.SpringBean;
+import com.alipay.sofa.runtime.api.annotation.SofaReference;
+import com.alipay.sofa.runtime.api.annotation.SofaService;
 import com.alipay.sofa.runtime.api.aware.AppConfigurationAware;
 import com.alipay.sofa.runtime.api.component.AppConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +49,7 @@ import org.springframework.ui.ModelMap;
 @Controller
 public class SampleController {
 
-    @Autowired
+    @SofaReference(uniqueId = "sample")
     private SampleService sampleService;
 
 	@RequestMapping(value="/sample",method = RequestMethod.GET)
