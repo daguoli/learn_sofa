@@ -1,3 +1,0 @@
-Module-Name: com.alipay.mvcdemo.web.home
-Web-Module-Name: home
-Spring-Loader: com.alipay.sofa.web.mvc.runtime
